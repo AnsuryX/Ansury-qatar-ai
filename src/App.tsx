@@ -8,7 +8,6 @@ import GetStartedModal from './components/GetStartedModal';
 import TechStackModal from './components/TechStackModal';
 import CaseStudiesSection from './components/CaseStudiesSection';
 import IntelligencePlayground from './components/IntelligencePlayground';
-import GoogleFormsSync from './components/GoogleFormsSync';
 import TrustedByCarousel from './components/TrustedByCarousel';
 import WhatsAppButton from './components/WhatsAppButton';
 import { useLanguage } from './LanguageContext';
@@ -419,10 +418,6 @@ export default function App() {
           <IntelligencePlayground />
         )}
 
-        {activeTab === 'google-forms' && (
-          <GoogleFormsSync />
-        )}
-
       </main>
 
       {/* Footer */}
@@ -446,10 +441,10 @@ export default function App() {
               <span className="font-mono text-[10px] font-bold text-[#06B6D4] tracking-widest uppercase mb-2">
                 {copy.legal}
               </span>
-              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:ayubalansari98@gmail.com" target="_blank" rel="noopener noreferrer">
+              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:Ansurysystems@gmail.com" target="_blank" rel="noopener noreferrer">
                 {copy.privacy}
               </a>
-              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:ayubalansari98@gmail.com" target="_blank" rel="noopener noreferrer">
+              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:Ansurysystems@gmail.com" target="_blank" rel="noopener noreferrer">
                 {copy.terms}
               </a>
             </div>
@@ -457,10 +452,10 @@ export default function App() {
               <span className="font-mono text-[10px] font-bold text-[#06B6D4] tracking-widest uppercase mb-2">
                 {copy.company}
               </span>
-              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:ayubalansari98@gmail.com" target="_blank" rel="noopener noreferrer">
+              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:Ansurysystems@gmail.com" target="_blank" rel="noopener noreferrer">
                 {copy.sustainability}
               </a>
-              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:ayubalansari98@gmail.com" target="_blank" rel="noopener noreferrer">
+              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:Ansurysystems@gmail.com" target="_blank" rel="noopener noreferrer">
                 {copy.contactUs}
               </a>
             </div>

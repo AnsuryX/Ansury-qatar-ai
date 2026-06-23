@@ -61,4 +61,4 @@ The economic value proposition of Ansury AI is rooted in real-world performance 
 ## Technical Specifications
 - **Client Stack:** React 18 with Vite, styled elegantly via Tailwind CSS using the "Cosmic Slate" design framework, paired with high-performance animations (Liquid state micro-animations via `motion`).
 - **Data Architecture:** Designed to feed structured, validated customer ledgers directly to enterprise REST APIs, supporting clean, non-destructive, robust JSON synchronization.
-- **Primary Contacts & Inquiry Routing:** All compliance or consultation requests are routed via `ayubalansari98@gmail.com` or handled directly in Doha, Qatar.
+- **Primary Contacts & Inquiry Routing:** All compliance or consultation requests are routed via `Ansurysystems@gmail.com` or handled directly in Doha, Qatar.

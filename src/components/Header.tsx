@@ -16,7 +16,6 @@ export default function Header({ activeTab, setActiveTab, onGetStarted }: Header
     { id: 'solutions', label: t('solutions') },
     { id: 'case-studies', label: t('caseStudies') },
     { id: 'intelligence', label: t('intelligence') },
-    { id: 'google-forms', label: t('googleForms') },
   ];
 
   return (

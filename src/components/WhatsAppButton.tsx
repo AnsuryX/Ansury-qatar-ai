@@ -8,7 +8,7 @@ export default function WhatsAppButton() {
   const [typedMessage, setTypedMessage] = useState('');
 
   // Pre-filled target WhatsApp details
-  const whatsappNumber = '+97455551234'; // Doha, Qatar demonstration/real operator pipeline
+  const whatsappNumber = '+97455001760'; // Doha, Qatar demonstration/real operator pipeline
   
   const defaultMessageEn = "Marhaban, I am interested in deploying Ansury AI for our real estate portfolio in Doha. Please share the integration requirements.";
   const defaultMessageAr = "مرحباً، أود الاستفسار عن تفعيل أنظمة أنسوري للذكاء الاصطناعي لمحفظتنا العقارية في الدوحة. يرجى تزويدنا بمتطلبات الدمج.";
