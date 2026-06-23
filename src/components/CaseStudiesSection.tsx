@@ -9,7 +9,9 @@ import {
   Sparkles, 
   Loader2, 
   ArrowRight,
-  BookmarkCheck
+  BookmarkCheck,
+  Building,
+  Quote
 } from 'lucide-react';
 import NodeNetwork from './NodeNetwork';
 import { useLanguage } from '../LanguageContext';
@@ -59,7 +61,66 @@ export default function CaseStudiesSection() {
       successMsg: "Your technical blueprint profile has been verified. A regional integration architect has been matched to coordinate your audit. Estimated call queue: < 4 hours.",
       resetBtn: "Submit Different Profile Requisition",
       hqBadge: "Ansury HQ - Qatar",
-      hqAddress: "Burj Alfardan, Lusail"
+      hqAddress: "Burj Alfardan, Lusail",
+      deploymentsTitle: "Active Institutional Deployments",
+      deploymentsSubtitle: "Deep technical retrospectives of how Doha's leading brokerages and developers achieved 60-second response latency.",
+      caseStudiesList: [
+        {
+          area: "The Pearl-Qatar",
+          client: "United Property Partners",
+          stats: "-92% Response Delay",
+          title: "Automating 500+ Luxury Leads with HubSpot",
+          desc: "By integrating directly with their Property Finder and WhatsApp portals, Ansury AI qualifies inquiries about off-plan apartments inside 45 seconds, routing verified buyers directly to senior brokers' phones.",
+          m1Val: "42s",
+          m1Lbl: "Response Latency",
+          m2Val: "+24%",
+          m2Lbl: "Conversion Rate"
+        },
+        {
+          area: "West Bay, Doha",
+          client: "Doha Prestige Group",
+          stats: "$5,400 Monthly Savings",
+          title: "Zero-Latency Lead Triage for Commercial Tower Pipelines",
+          desc: "Commercial assets require complex qualification filters. Ansury AI filters corporate inquiries, matches space requirements with available stock layouts, and logs leads directly in Salesforce.",
+          m1Val: "1,140 hrs",
+          m1Lbl: "Broker Hours Reallocated",
+          m2Val: "89%",
+          m2Lbl: "Automated Classification"
+        },
+        {
+          area: "Lusail Marina/City",
+          client: "Al-Khor Developers",
+          stats: "78% Qualification",
+          title: "Sovereign Arabic Agent Deployment for High-Volume Inbound",
+          desc: "With massive Arabic-speaking GCC inbound queries during seasonal launches, our sovereign GCC-dialect optimized agent qualified buyer profiles and budgets natively on Doha servers.",
+          m1Val: "< 15s",
+          m1Lbl: "Average Response",
+          m2Val: "99.98%",
+          m2Lbl: "System Uptime"
+        }
+      ],
+      testimonialsTitle: "Authority in Action — Partner Testimonials",
+      testimonialsSubtitle: "Hear from managing directors and digital leaders optimizing their real estate pipelines with Ansury AI.",
+      testimonialsList: [
+        {
+          quote: "Ansury AI completely changed how we structure recruitment. Instead of hiring agents to browse portals and copy-paste messages, we let Ansury qualify the buyers first inside 60 seconds. Our agents are actually closing deals instead of fighting response lag.",
+          author: "Yousef Al-Kuwari",
+          role: "Managing Director",
+          company: "Lusail Premier Properties"
+        },
+        {
+          quote: "Since deployment on our West Bay campaigns, the bilingual response speed is unbelievable. Customers receive an accurate, polite reply in English or high-context Arabic with proper names and titles before our team can even open the email.",
+          author: "Fatimah Al-Thani",
+          role: "Head of Client Relations",
+          company: "Doha Skyline Group"
+        },
+        {
+          quote: "Sovereign local cloud housing was a non-negotiable directive for our group assets. Ansury AI operates 100% on a secure Doha-based micro-server stack, delivering immense speed while guaranteeing compliance with Qatari privacy legislation.",
+          author: "Abdulrahman Al-Hammadi",
+          role: "VP of Enterprise Development",
+          company: "Qatar Sovereign Holdings"
+        }
+      ]
     },
     ar: {
       eyebrow: "الشراكة مع النظم الذكية",
@@ -102,7 +163,66 @@ export default function CaseStudiesSection() {
       successMsg: "تم التحقق التدقيقي الكامل من ملف طلبكم العقاري. تم تعيين أحد كبار مهندسي الأنظمة لدينا للتنسيق وتحديد تفاصيل الاستشارة القادمة. فترة الانتظار المقدرة للاتصال الفوري: أقل من 4 ساعات.",
       resetBtn: "تقديم طلب استشارة جديدة لملف آخر",
       hqBadge: "مقر أنسوري الرئيسي - قطر",
-      hqAddress: "برج الفردان، لوسيل"
+      hqAddress: "برج الفردان، لوسيل",
+      deploymentsTitle: "عمليات تشغيل نشطة للمؤسسات",
+      deploymentsSubtitle: "دراسات فنية متكاملة لكيفية تحقيق كبرى الشركات العقارية والوسطاء بالدوحة لمعدل استجابة في أقل من ٦٠ ثانية.",
+      caseStudiesList: [
+        {
+          area: "اللؤلؤة قطر",
+          client: "المتحدة للشركاء العقاريين",
+          stats: "تقليص زمن الاستجابة ٩٢٪",
+          title: "أتمتة أكثر من ٥٠٠ عميل فاخر مع مزامنة كاملة لـ HubSpot",
+          desc: "من خلال التكامل المباشر مع بوابات بروبرتي فايندر وقنوات الواتساب، يقوم نظام أنسوري بتأهيل الاستفسارات السكنية في أقل من ٤٥ ثانية، موجهاً المشترين الجادين مباشرة إلى كبار وسطاء المبيعات.",
+          m1Val: "٤٢ ثانية",
+          m1Lbl: "زمن الاستجابة للطلب",
+          m2Val: "+٢٤٪",
+          m2Lbl: "معدل تحويل الصفقات"
+        },
+        {
+          area: "الخليج الغربي، الدوحة",
+          client: "مجموعة الدوحة المرموقة",
+          stats: "توفير شهري ٥،٤٠٠ دولار",
+          title: "تصفية وفرز العملاء فوري المزامنة للأبراج التجارية الكبرى",
+          desc: "تتطلب الأصول التجارية مرشحات تصفية دقيقة ومعقدة. يقوم نظام أنسوري بفرز الاستفسارات وتطابق المساحات المطلوبة بالملفات المتاحة لديهم وتسجيلها مباشرة على Salesforce.",
+          m1Val: "١،١٤٠ ساعة",
+          m1Lbl: "ساعات عمل موفرة للوسطاء",
+          m2Val: "٨٩٪",
+          m2Lbl: "التصنيف والفرز التلقائي"
+        },
+        {
+          area: "مارينا لوسيل",
+          client: "الخور للمطورين العقاريين",
+          stats: "تأهيل بنسبة ٧٨٪",
+          title: "دمج عميل عربي سيادي فائق الاستجابة للقنوات العقارية عالية الكثافة",
+          desc: "مع كثافة الاستفسارات باللغة العربية مع انطلاق مشاريع المواسم العقارية، نجح عميلنا السيادي المصمم باللهجات الخليجية في تأهيل وفلترة ميزانيات المشترين على خوادم الدوحة السيادية.",
+          m1Val: "أقل من ١٥ ثانية",
+          m1Lbl: "متوسط سرعة الرد",
+          m2Val: "٩٩.٩٨٪",
+          m2Lbl: "التواجد التشغيلي المستمر"
+        }
+      ],
+      testimonialsTitle: "كفاءة موثقة — شهادات شركائنا في قطر",
+      testimonialsSubtitle: "استمع إلى شهادات المدراء التنفيذيين وقادة التحول الرقمي المطورين لأعمالهم اعتماداً على ذكاء أنسوري الاصطناعي.",
+      testimonialsList: [
+        {
+          quote: "لقد غيّر ذكاء أنسوري فكرتنا تماماً عن التوظيف العقاري. بدلاً من توظيف وسطاء لتصفح البوابات ونسخ الردود، ندع أنسوري يؤهل المشتري أولاً خلال ٦٠ ثانية. وكلاؤنا الآن يبرمون صفقات فعلية بدلاً من محاربة تأخر الردود.",
+          author: "يوسف الكواري",
+          role: "المدير العام",
+          company: "عقارات لوسيل العقارية المتميزة"
+        },
+        {
+          quote: "منذ إطلاق النظام على حملاتنا في الخليج الغربي، كانت سرعة الاستجابة ثنائية اللغة لا تصدق. يتلقى العملاء رداً دقيقاً ومحترماً بالإنجليزية أو العربية الفصحى المناسبة بالألقاب الرسمية قبل أن يتمكن فريقنا المكتبي حتى من فتح البريد الوارد.",
+          author: "فاطمة آل ثاني",
+          role: "رئيسة علاقات العملاء",
+          company: "مجموعة الدوحة لخطوط الأفق"
+        },
+        {
+          quote: "الاستضافة السحابية المحلية السيادية كانت شرطاً لا غنى عنه لأصول مجموعتنا الاستثمارية. يعمل نظام أنسوري بالكامل على خوادم محلية آمنة في الدوحة، مقدماً سرعة ممتازة وممتثلاً لقوانين حماية البيانات والخصوصية القطرية.",
+          author: "عبد الرحمن الحمادي",
+          role: "نائب رئيس قطاع تطوير المؤسسات",
+          company: "قطر السيادية القابضة"
+        }
+      ]
     }
   }[language];
 
@@ -551,6 +671,156 @@ export default function CaseStudiesSection() {
           </div>
 
         </div>
+
+        {/* Testimonials (Operator Quotes) Section */}
+        <div className="mt-28 pt-20 border-t border-[#2A3650]/40">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="font-mono text-[10px] text-[#06B6D4] font-bold uppercase tracking-widest block mb-3">
+              {isRtl ? "شهادات الشركاء المعتمدين" : "SOCIAL PROOF & AUTHORITY"}
+            </span>
+            <h2 className="font-sora text-3xl font-bold text-white mb-4">
+              {csCopy.testimonialsTitle}
+            </h2>
+            <p className="font-sans text-[#8B95A7] text-sm leading-relaxed">
+              {csCopy.testimonialsSubtitle}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {csCopy.testimonialsList.map((t, idx) => (
+              <div 
+                key={idx} 
+                className="bg-[#1A2333] rounded-2xl p-8 border border-[#2A3650]/40 flex flex-col justify-between shadow-xl relative hover:translate-y-[-4px] transition-all duration-300 group overflow-hidden animate-fade-in"
+              >
+                {/* Visual quote accent icon */}
+                <div className="absolute top-4 right-4 text-[#06B6D4]/5 group-hover:text-[#06B6D4]/10 transition-colors pointer-events-none">
+                  <Quote className="w-16 h-16 transform scale-x-[-1]" />
+                </div>
+
+                <div className="relative z-10">
+                  {/* Rating Stars mock */}
+                  <div className={`flex gap-1 mb-6 ${isRtl ? 'justify-start' : 'justify-start'}`}>
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-[#06B6D4] text-xs">★</span>
+                    ))}
+                  </div>
+
+                  <p className="text-xs text-[#dfe3e9] leading-relaxed italic mb-8 relative">
+                    "{t.quote}"
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-4 relative z-10 border-t border-[#2A3650]/35 pt-5">
+                  <div className="w-10 h-10 rounded-full bg-[#20283B] border border-[#06B6D4]/30 flex items-center justify-center shrink-0">
+                    <span className="text-[#06B6D4] font-bold text-xs">
+                      {t.author.charAt(0)}
+                    </span>
+                  </div>
+                  <div className={isRtl ? 'text-right' : 'text-left'}>
+                    <h4 className="text-xs font-bold text-white font-sora block">
+                      {t.author}
+                    </h4>
+                    <p className="text-[10px] text-[#8B95A7] font-sans leading-relaxed">
+                      {t.role}, <strong className="text-[#06B6D4] font-semibold">{t.company}</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Institutional Detailed Deployments (Case Studies Section) */}
+        <div className="mt-28 pt-20 border-t border-[#2A3650]/40">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="font-mono text-[10px] text-[#06B6D4] font-bold uppercase tracking-widest block mb-3">
+              {isRtl ? "مستندات كفاءة النظام والتحول" : "RETROSPECTIVE LEDGER"}
+            </span>
+            <h2 className="font-sora text-3xl font-bold text-white mb-4">
+              {csCopy.deploymentsTitle}
+            </h2>
+            <p className="font-sans text-[#8B95A7] text-sm leading-relaxed">
+              {csCopy.deploymentsSubtitle}
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {csCopy.caseStudiesList.map((cs, idx) => (
+              <div 
+                key={idx}
+                className="bg-[#1A2333] rounded-2xl border border-[#2A3650]/30 hover:border-[#2A3650]/80 transition-all duration-300 overflow-hidden shadow-xl"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-12">
+                  
+                  {/* Meta Column */}
+                  <div className={`p-8 lg:p-10 lg:col-span-4 bg-[#20283B] flex flex-col justify-between border-[#2A3650]/50 ${isRtl ? 'lg:border-l' : 'lg:border-r'}`}>
+                    <div>
+                      <div className="flex items-center gap-2 mb-4">
+                        <MapPin className="w-3.5 h-3.5 text-[#06B6D4] shrink-0" />
+                        <span className="font-mono text-[10px] text-[#8B95A7] font-semibold tracking-wider uppercase">
+                          {cs.area}
+                        </span>
+                      </div>
+                      
+                      <div className="flex items-center gap-2 mb-2">
+                        <Building className="w-3.5 h-3.5 text-[#06B6D4] shrink-0" />
+                        <span className="text-xs text-white font-bold max-w-full truncate">
+                          {cs.client}
+                        </span>
+                      </div>
+
+                      <h4 className="text-xs font-semibold text-[#06B6D4] font-mono uppercase bg-[#06B6D4]/5 border border-[#06B6D4]/15 px-3 py-1.5 rounded-md inline-block mt-3">
+                        {cs.stats}
+                      </h4>
+                    </div>
+
+                    {/* Miniature Grid inside case details */}
+                    <div className="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-[#2A3650]/30">
+                      <div>
+                        <span className="block text-xl font-bold font-sora text-[#06B6D4] mb-0.5">
+                          {cs.m1Val}
+                        </span>
+                        <span className="block text-[9px] text-[#8B95A7] font-mono leading-none lowercase">
+                          {cs.m1Lbl}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="block text-xl font-bold font-sora text-[#06B6D4] mb-0.5">
+                          {cs.m2Val}
+                        </span>
+                        <span className="block text-[9px] text-[#8B95A7] font-mono leading-none lowercase">
+                          {cs.m2Lbl}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Core Story Column */}
+                  <div className="p-8 lg:p-10 lg:col-span-8 flex flex-col justify-between">
+                    <div>
+                      <span className="font-mono text-[9px] text-[#06B6D4] font-bold uppercase tracking-widest block mb-2">
+                        {isRtl ? `الحالة رقم ٠${idx + 1} — دراسة أداء معتمدة` : `CASE DEPLOYMENT 0${idx + 1} — CERTIFIED PERFORMANCE`}
+                      </span>
+                      <h3 className="font-sora text-lg md:text-xl font-bold text-white mb-4 leading-snug">
+                        {cs.title}
+                      </h3>
+                      <p className="text-xs md:text-sm text-[#8B95A7] leading-relaxed mb-6">
+                        {cs.desc}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-2 text-xs text-[#06B6D4] font-mono font-bold uppercase">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                      <span>{isRtl ? "نظام موثق وقائم بالخدمة بنجاح" : "System verified & actively routing"}</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </div>
   );

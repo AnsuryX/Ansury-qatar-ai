@@ -111,7 +111,8 @@ export const translations = {
     privacy: "Privacy Policy",
     terms: "Terms of Service",
     sustainability: "Sustainability",
-    contactUs: "Contact Us"
+    contactUs: "Contact Us",
+    trustedBy: "Empowering Qatar's Most Ambitious Real Estate Portfolios & Agencies"
   },
   ar: {
     // Nav & Header
@@ -223,6 +224,7 @@ export const translations = {
     privacy: "سياسة الخصوصية",
     terms: "شروط الخدمة والاستخدام",
     sustainability: "الاستدامة والالتزام",
-    contactUs: "اتصل بنا"
+    contactUs: "اتصل بنا",
+    trustedBy: "تمكين كبرى المحافظ العقارية والوكالات الرائدة في دولة قطر"
   }
 } as const;

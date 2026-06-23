@@ -9,6 +9,7 @@ import TechStackModal from './components/TechStackModal';
 import CaseStudiesSection from './components/CaseStudiesSection';
 import IntelligencePlayground from './components/IntelligencePlayground';
 import GoogleFormsSync from './components/GoogleFormsSync';
+import TrustedByCarousel from './components/TrustedByCarousel';
 import { useLanguage } from './LanguageContext';
 import { translations } from './translations';
 import { 
@@ -91,6 +92,9 @@ export default function App() {
                 </div>
               </div>
             </section>
+
+            {/* Trusted By Carousel Section */}
+            <TrustedByCarousel />
 
             {/* Bento Grid / Stats Section */}
             <section className="max-w-[1280px] mx-auto px-8 py-16 relative z-10">
