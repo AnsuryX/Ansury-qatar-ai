@@ -131,14 +131,14 @@ export default function GetStartedModal({ isOpen, onClose }: GetStartedModalProp
     // Capture and submit to Google Forms in the background with a robust default fallback
     const savedMapping = localStorage.getItem('ansury_gform_mapping');
     let mapping = {
-      formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSew67BxqImdq0wkcA_ReKrcufzqtUy0CGgBKxRdpaEnapeVcg/formResponse',
-      firmNameField: 'entry.878293089',
-      contactPersonField: 'entry.486856360',
-      emailField: 'entry.1855917600',
-      phoneField: 'entry.1741765249',
-      focusAreaField: 'entry.1305289832',
-      volumeField: '',
-      portalsField: 'entry.626789171'
+      formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdKOLiMCDz6fW0a03eQ3pDqWnjiKuXdFGz1UzI6tQC5siilTA/formResponse',
+      firmNameField: 'entry.1843495534',
+      contactPersonField: 'entry.1040784031',
+      emailField: 'entry.1890684236',
+      phoneField: 'entry.1015656115',
+      focusAreaField: 'entry.679401230',
+      volumeField: 'entry.200195860',
+      portalsField: 'entry.745319448'
     };
 
     if (savedMapping) {
