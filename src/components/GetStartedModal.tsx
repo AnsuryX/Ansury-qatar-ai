@@ -128,44 +128,77 @@ export default function GetStartedModal({ isOpen, onClose }: GetStartedModalProp
     if (!formData.firmName || !formData.email) return;
     setIsSubmitted(true);
 
-    // Capture and submit to Google Forms in the background if configured
+    // Capture and submit to Google Forms in the background with a robust default fallback
     const savedMapping = localStorage.getItem('ansury_gform_mapping');
+    let mapping = {
+      formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSew67BxqImdq0wkcA_ReKrcufzqtUy0CGgBKxRdpaEnapeVcg/formResponse',
+      firmNameField: 'entry.878293089',
+      contactPersonField: 'entry.486856360',
+      emailField: 'entry.1855917600',
+      phoneField: 'entry.1741765249',
+      focusAreaField: 'entry.1305289832',
+      volumeField: '',
+      portalsField: 'entry.626789171'
+    };
+
     if (savedMapping) {
       try {
-        const mapping = JSON.parse(savedMapping);
-        if (mapping.formUrl) {
-          let targetUrl = mapping.formUrl.trim();
-          if (targetUrl.includes('/viewform')) {
-            targetUrl = targetUrl.replace('/viewform', '/formResponse');
-          }
-          if (!targetUrl.includes('/formResponse') && targetUrl.includes('docs.google.com/forms/d/e/')) {
-            const parts = targetUrl.split('?')[0];
-            targetUrl = parts + (parts.endsWith('/') ? 'formResponse' : '/formResponse');
-          }
-          if (targetUrl.includes('?')) {
-            targetUrl = targetUrl.split('?')[0];
-          }
-
-          const body = new URLSearchParams();
-          if (mapping.firmNameField) body.append(mapping.firmNameField, formData.firmName);
-          if (mapping.contactPersonField) body.append(mapping.contactPersonField, formData.contactPerson || '');
-          if (mapping.emailField) body.append(mapping.emailField, formData.email);
-          if (mapping.phoneField) body.append(mapping.phoneField, formData.phone || '');
-          if (mapping.focusAreaField) body.append(mapping.focusAreaField, formData.focusArea);
-          if (mapping.volumeField) body.append(mapping.volumeField, String(formData.monthlyInquiries));
-          if (mapping.portalsField) body.append(mapping.portalsField, formData.portalsUsed.join(', '));
-
-          await fetch(targetUrl, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: body.toString()
-          });
-          
-          console.log('Automated background submission completed safely via mode no-cors.');
+        const parsed = JSON.parse(savedMapping);
+        if (parsed && parsed.formUrl) {
+          mapping = { ...mapping, ...parsed };
         }
+      } catch (err) {
+        console.error('Error parsing loaded gform mapping:', err);
+      }
+    }
+
+    if (mapping.formUrl) {
+      try {
+        let targetUrl = mapping.formUrl.trim();
+        if (targetUrl.includes('/viewform')) {
+          targetUrl = targetUrl.replace('/viewform', '/formResponse');
+        }
+        if (!targetUrl.includes('/formResponse') && targetUrl.includes('docs.google.com/forms/d/e/')) {
+          const parts = targetUrl.split('?')[0];
+          targetUrl = parts + (parts.endsWith('/') ? 'formResponse' : '/formResponse');
+        }
+        if (targetUrl.includes('?')) {
+          targetUrl = targetUrl.split('?')[0];
+        }
+
+        const body = new URLSearchParams();
+        if (mapping.firmNameField) body.append(mapping.firmNameField, formData.firmName);
+        if (mapping.contactPersonField) body.append(mapping.contactPersonField, formData.contactPerson || '');
+        if (mapping.emailField) body.append(mapping.emailField, formData.email);
+        if (mapping.phoneField) body.append(mapping.phoneField, formData.phone || '');
+        if (mapping.focusAreaField) body.append(mapping.focusAreaField, formData.focusArea);
+        
+        // Construct detailed requirements/portals string containing portals & volume
+        const portalsStr = formData.portalsUsed.length > 0 ? formData.portalsUsed.join(', ') : 'None';
+        const detailStr = `[30-Min Audit Request] Portals: ${portalsStr} | Monthly Volume: ${formData.monthlyInquiries}`;
+
+        if (mapping.volumeField) {
+          body.append(mapping.volumeField, String(formData.monthlyInquiries));
+          if (mapping.portalsField) {
+            body.append(mapping.portalsField, formData.portalsUsed.join(', '));
+          }
+        } else {
+          // If volumeField is empty in the target Google Form, merge both portals & volume into the portalsField
+          if (mapping.portalsField) {
+            body.append(mapping.portalsField, detailStr);
+          }
+        }
+
+        await fetch(targetUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: body.toString()
+        });
+        
+        console.log('Automated background submission completed safely via mode no-cors.');
       } catch (err) {
         console.error('Failed to auto-dispatch lead to external Google Form:', err);
       }
