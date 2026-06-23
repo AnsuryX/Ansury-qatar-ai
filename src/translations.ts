@@ -7,6 +7,7 @@ export const translations = {
     caseStudies: "Case Studies",
     intelligence: "Intelligence Sandbox",
     googleForms: "Google Forms Sync",
+    answers: "Answers",
     requestAudit: "Request 30-Min Audit",
     auditBtn: "Request 30-Min System Audit",
 
@@ -120,6 +121,7 @@ export const translations = {
     caseStudies: "دراسات الحالة والنجاح",
     intelligence: "مركز ذكاء الاستجابة",
     googleForms: "مزامنة نماذج جوجل",
+    answers: "إجابات تقنية",
     requestAudit: "طلب تدقيق (30 دقيقة)",
     auditBtn: "طلب تدقيق فني فوري (30 دقيقة)",
 

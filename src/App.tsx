@@ -8,6 +8,7 @@ import GetStartedModal from './components/GetStartedModal';
 import TechStackModal from './components/TechStackModal';
 import CaseStudiesSection from './components/CaseStudiesSection';
 import IntelligencePlayground from './components/IntelligencePlayground';
+import FaqSection from './components/FaqSection';
 import TrustedByCarousel from './components/TrustedByCarousel';
 import WhatsAppButton from './components/WhatsAppButton';
 import { useLanguage } from './LanguageContext';
@@ -386,6 +387,9 @@ export default function App() {
               </div>
             </section>
 
+            {/* Answers Accordion Section */}
+            <FaqSection />
+
             {/* CTA Section */}
             <section className="bg-[#20283B] py-24 border-t border-[#2A3650]/40">
               <div className="max-w-[1280px] mx-auto px-8 text-center flex flex-col items-center">
@@ -416,6 +420,10 @@ export default function App() {
 
         {activeTab === 'intelligence' && (
           <IntelligencePlayground />
+        )}
+
+        {activeTab === 'answers' && (
+          <FaqSection />
         )}
 
       </main>
