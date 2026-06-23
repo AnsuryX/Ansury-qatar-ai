@@ -10,6 +10,7 @@ import CaseStudiesSection from './components/CaseStudiesSection';
 import IntelligencePlayground from './components/IntelligencePlayground';
 import GoogleFormsSync from './components/GoogleFormsSync';
 import TrustedByCarousel from './components/TrustedByCarousel';
+import WhatsAppButton from './components/WhatsAppButton';
 import { useLanguage } from './LanguageContext';
 import { translations } from './translations';
 import { 
@@ -477,6 +478,9 @@ export default function App() {
         isOpen={isTechStackOpen} 
         onClose={() => setIsTechStackOpen(false)} 
       />
+
+      {/* Persistent Floating Action Buttons */}
+      <WhatsAppButton />
 
     </div>
   );
