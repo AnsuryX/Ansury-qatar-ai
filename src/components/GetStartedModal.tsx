@@ -394,8 +394,8 @@ export default function GetStartedModal({ isOpen, onClose }: GetStartedModalProp
                   {audCopy.successTitle}
                 </h4>
                 
-                <p className="text-sm text-[#D1D5DB] max-w-md leading-relaxed mb-6">
-                  {audCopy.successMsg.replace('{name}', `<strong>${formData.contactPerson || formData.firmName}</strong>`)}
+                <p className="text-sm text-[#D1D5DB] max-w-md leading-relaxed mb-6 font-sans">
+                  {audCopy.successMsg.replace('{name}', formData.contactPerson || formData.firmName)}
                 </p>
 
                 {/* Quick breakdown card */}
