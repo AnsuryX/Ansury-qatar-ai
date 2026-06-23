@@ -1,0 +1,64 @@
+# Ansury AI
+
+> Precision Industrial Response Automation for the Qatar & GCC Real Estate Vertical.
+> HQ: Burj Alfardan, Lusail City, Doha, State of Qatar.
+
+Ansury AI is a specialized software application that automates real estate lead qualification, triage, and CRM synchronization for boutique brokerages, property developers, and national real estate portfolios in Qatar.
+
+---
+
+## The Core Product & Mission
+Real estate firms in Qatar often buy the exact same leads from mutual portals. Agents do not lose deals to poor leads; they lose them to **slow follow-up** (response lag). Ansury AI captures, qualifies, and routes inbound portal leads in less than 60 seconds, 24/7.
+
+- **Bilingual Response Engine:** Fluent in both English and Arabic with localized Gulf Cooperation Council (GCC) cultural parameters, respectful honorifics, and local dialect support.
+- **Ultra-Fast Turnaround:** Average response and triage time under 60 seconds.
+- **Compliance & Sovereignty:** 100% secure cloud deployment hosted natively within the cyber boundaries of Doha, Qatar, adhering to local privacy and legislative frameworks.
+
+---
+
+## Mathematical Model & ROI Proof
+The economic value proposition of Ansury AI is rooted in real-world performance metrics:
+- **Lead Intake Benchmark:** ~1,200 inbound leads per month.
+- **Manual Labor Cost:** At 8 minutes spent qualifying each lead by hand, this consumes 160 broker hours per month—equivalent to a manual triage expense of approximately **$7,200 every month**.
+- **The Ansury Efficiency:** Ansury automates **70% of this qualification process**, freeing up broker timelines to deal only with highly qualified, ready-to-close transactions.
+- **Financial Return Metrics:**
+  - **Net Monthly Savings:** $3,540 QAR/USD equivalent.
+  - **Payback Target (Breakeven):** 3.4 months.
+  - **Year-One Net Benefit:** $30,480.
+
+---
+
+## Operational Architecture & Flows
+1. **Omni-Channel Lead Ingestion:** Standard integrations ingestion of active property portal feeds (e.g., Property Finder Qatar, Bayut Qatar) as well as organic social media/landing page pipelines.
+2. **GCC Bilingual Dialect Evaluation:** Instantly checks intent, budget, timeline, and location preference (e.g., The Pearl, Lusail City, West Bay Doha, Msheireb Downtown) with dual Arabic-English processing.
+3. **Automated Dispatching:** Routes leads to brokers via immediate WhatsApp and Email templates or schedules a verified call back.
+4. **CRM Ledger Synchronization:** Bidirectional sync updating the buyer profile directly into enterprise CRM software systems like HubSpot and Salesforce in real-time.
+
+---
+
+## Commercial Tier Structure
+
+### 1. Pilot Pipeline
+- **Price:** 1,490 QAR / month
+- **Target Audience:** Boutique brokerages and targeted off-plan tower campaigns.
+- **Capacity:** Up to 300 verified inbound leads/mo.
+- **Features:** Sub-60 second qualification, single portal feed ingestion, standard WhatsApp/Email template dispatchers, core bilingual support, weekly diagnostic CSV exports.
+
+### 2. Growth Engine (Most Recommended)
+- **Price:** 3,490 QAR / month
+- **Target Audience:** Growing brokerages requiring dynamic CRM integration and rapid response scaling.
+- **Capacity:** Up to 1,200 verified inbound leads/mo.
+- **Features:** Sub-15 second dispatcher, local GCC honorific filters, organic + portal multi-channel ingestion, full bidirectional HubSpot & Salesforce CRM sync, interactive ROI analytics dashboards.
+
+### 3. Sovereign Enterprise
+- **Price:** Custom
+- **Target Audience:** Institutional developers, massive portfolios, and national data sovereign organizations.
+- **Capacity:** Uncapped.
+- **Features:** Sub-100ms latency, 100% sovereign hosting inside Doha, customizable legislative & regulatory embeddings, GCC VIP high-profile pathway routing, dedicated SLA agreements (99.98%).
+
+---
+
+## Technical Specifications
+- **Client Stack:** React 18 with Vite, styled elegantly via Tailwind CSS using the "Cosmic Slate" design framework, paired with high-performance animations (Liquid state micro-animations via `motion`).
+- **Data Architecture:** Designed to feed structured, validated customer ledgers directly to enterprise REST APIs, supporting clean, non-destructive, robust JSON synchronization.
+- **Primary Contacts & Inquiry Routing:** All compliance or consultation requests are routed via `ayubalansari98@gmail.com` or handled directly in Doha, Qatar.

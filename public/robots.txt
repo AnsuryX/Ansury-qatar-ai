@@ -1,0 +1,17 @@
+# Robots.txt for Ansury AI
+# Optimized for general search engines and modern AI crawlers/RAG systems
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /assets/
+Allow: /llms.txt
+
+# Explicitly point AI scrapers and search bots to the structured description file
+Sitemap: https://ansury.ai/sitemap.xml
+llms-txt: https://ansury.ai/llms.txt
+
+# Respect standard security protocols
+Disallow: /api/
+Disallow: /config/
+Disallow: /private/
