@@ -9,6 +9,7 @@ import TechStackModal from './components/TechStackModal';
 import CaseStudiesSection from './components/CaseStudiesSection';
 import IntelligencePlayground from './components/IntelligencePlayground';
 import FaqSection from './components/FaqSection';
+import ServicesSection from './components/ServicesSection';
 import TrustedByCarousel from './components/TrustedByCarousel';
 import WhatsAppButton from './components/WhatsAppButton';
 import { useLanguage } from './LanguageContext';
@@ -177,6 +178,9 @@ export default function App() {
 
               </div>
             </section>
+
+            {/* Advanced Operational Services Section */}
+            <ServicesSection />
 
             {/* Visual Anchor Section with Doha Skyline */}
             <section className="max-w-[1280px] mx-auto px-8 py-16">
