@@ -27,7 +27,7 @@ export default function WhatsAppButton() {
   };
 
   return (
-    <div id="whatsapp-persistent-container" className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div id="whatsapp-persistent-container" className="fixed bottom-6 left-6 z-50 flex flex-col items-start">
       
       {/* Quick Interactive Tooltip Popover */}
       {isOpen && (
@@ -43,7 +43,7 @@ export default function WhatsAppButton() {
                 <h4 className="text-xs font-bold font-sora text-white">
                   {language === 'en' ? 'Ansury AI Direct Line' : 'الخط المباشر لأنسوري'}
                 </h4>
-                <p className="text-[10px] text-[#8B95A7] font-sans">
+                <p className="text-[10px] text-[#8B95A7] font-sans text-left">
                   {language === 'en' ? 'Doha HQ — Response < 2m' : 'مقر الدوحة — استجابة فورية'}
                 </p>
               </div>
@@ -58,7 +58,7 @@ export default function WhatsAppButton() {
 
           {/* Quick actions/templates */}
           <div className="space-y-2 mb-4">
-            <p className="text-[10px] font-mono text-[#8B95A7] uppercase tracking-wider block mb-1">
+            <p className="text-[10px] font-mono text-[#8B95A7] uppercase tracking-wider block mb-1 text-left">
               {language === 'en' ? 'Select Quick Consultation Template:' : 'اختر نموذج استشارة سريع:'}
             </p>
             
@@ -109,7 +109,7 @@ export default function WhatsAppButton() {
       )}
 
       {/* Main Floating Button */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 flex-row-reverse">
         {/* Sleek CTA pill showing only on desktop */}
         {!isOpen && (
           <div className="hidden sm:flex items-center gap-2 bg-[#111827] border border-[#25D366]/30 px-4 py-2.5 rounded-full shadow-lg backdrop-blur-md pointer-events-none select-none">

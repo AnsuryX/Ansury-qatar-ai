@@ -12,6 +12,7 @@ import FaqSection from './components/FaqSection';
 import ServicesSection from './components/ServicesSection';
 import TrustedByCarousel from './components/TrustedByCarousel';
 import WhatsAppButton from './components/WhatsAppButton';
+import AiChatWidget from './components/AiChatWidget';
 import { useLanguage } from './LanguageContext';
 import { translations } from './translations';
 import { 
@@ -488,6 +489,7 @@ export default function App() {
 
       {/* Persistent Floating Action Buttons */}
       <WhatsAppButton />
+      <AiChatWidget />
 
     </div>
   );
