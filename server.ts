@@ -37,6 +37,166 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "ok", time: new Date().toISOString() });
 });
 
+// Helper: Extractor for clean JSON from Markdown code blocks or direct strings
+function parseCleanJson(text: string) {
+  let cleanText = text.trim();
+  if (cleanText.startsWith("```")) {
+    const match = cleanText.match(/^```(?:json)?\s*([\s\S]*?)\s*```$/i);
+    if (match) {
+      cleanText = match[1].trim();
+    }
+  }
+  return JSON.parse(cleanText);
+}
+
+// Helper: Format message history to alternate roles cleanly (prevents API validation errors)
+function formatAlternativeMessages(messages: any[], systemInstruction: string, currentLeadState: any) {
+  const result: { role: string; content: string }[] = [];
+  
+  let firstUserText = `[SYSTEM CONTEXT: Current captured lead info is: ${JSON.stringify(currentLeadState || {})}. Continue the qualifying conversation without repeating questions for already filled fields. Introduce yourself if this is the first turn.]`;
+  
+  const historyCopy = [...messages];
+  if (historyCopy.length > 0 && historyCopy[0].role === "user") {
+    const firstMsg = historyCopy.shift();
+    firstUserText += `\n\nUser message: ${firstMsg.content}`;
+  }
+  
+  result.push({ role: "user", content: firstUserText });
+  
+  for (const msg of historyCopy) {
+    const role = msg.role === "assistant" ? "assistant" : "user";
+    const lastMsg = result[result.length - 1];
+    if (lastMsg && lastMsg.role === role) {
+      lastMsg.content += `\n\n${msg.content}`;
+    } else {
+      result.push({ role, content: msg.content });
+    }
+  }
+  
+  return result;
+}
+
+// Helper: OpenRouter Fetch Call
+async function callOpenRouter(messages: any[], systemInstruction: string, currentLeadState: any): Promise<any> {
+  const apiKey = process.env.OPENROUTER_API_KEY;
+  if (!apiKey) throw new Error("OPENROUTER_API_KEY is not configured.");
+
+  const model = process.env.OPENROUTER_MODEL || "anthropic/claude-3.5-sonnet";
+  console.log(`🔌 [OpenRouter] Directing request to OpenRouter model [${model}]...`);
+
+  const formatted = formatAlternativeMessages(messages, systemInstruction, currentLeadState);
+
+  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${apiKey}`,
+      "HTTP-Referer": process.env.APP_URL || "https://ansury.ai",
+      "X-Title": "Ansury Systems AI"
+    },
+    body: JSON.stringify({
+      model,
+      messages: [
+        { role: "system", content: systemInstruction },
+        ...formatted
+      ],
+      response_format: { type: "json_object" }
+    })
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`OpenRouter API error (${response.status}): ${errorText}`);
+  }
+
+  const json = await response.json();
+  const content = json.choices?.[0]?.message?.content;
+  if (!content) {
+    throw new Error("OpenRouter response did not contain content.");
+  }
+
+  return parseCleanJson(content);
+}
+
+// Helper: Anthropic Fetch Call
+async function callAnthropic(messages: any[], systemInstruction: string, currentLeadState: any): Promise<any> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) throw new Error("ANTHROPIC_API_KEY is not configured.");
+
+  const model = process.env.ANTHROPIC_MODEL || "claude-3-5-sonnet-latest";
+  console.log(`🔌 [Anthropic] Directing request to Anthropic model [${model}]...`);
+
+  const formatted = formatAlternativeMessages(messages, systemInstruction, currentLeadState);
+
+  const response = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01"
+    },
+    body: JSON.stringify({
+      model,
+      max_tokens: 1500,
+      system: systemInstruction,
+      messages: formatted
+    })
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Anthropic API error (${response.status}): ${errorText}`);
+  }
+
+  const json = await response.json();
+  const content = json.content?.[0]?.text;
+  if (!content) {
+    throw new Error("Anthropic response did not contain text.");
+  }
+
+  return parseCleanJson(content);
+}
+
+// Helper: OpenAI Fetch Call
+async function callOpenAI(messages: any[], systemInstruction: string, currentLeadState: any): Promise<any> {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) throw new Error("OPENAI_API_KEY is not configured.");
+
+  const model = process.env.OPENAI_MODEL || "gpt-4o-mini";
+  console.log(`🔌 [OpenAI] Directing request to OpenAI model [${model}]...`);
+
+  const formatted = formatAlternativeMessages(messages, systemInstruction, currentLeadState);
+
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      model,
+      messages: [
+        { role: "system", content: systemInstruction },
+        ...formatted
+      ],
+      response_format: { type: "json_object" }
+    })
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`OpenAI API error (${response.status}): ${errorText}`);
+  }
+
+  const json = await response.json();
+  const content = json.choices?.[0]?.message?.content;
+  if (!content) {
+    throw new Error("OpenAI response did not contain content.");
+  }
+
+  return parseCleanJson(content);
+}
+
 // Powerful Sales Consultation API using Gemini-3.5-flash with Structured Output schema
 app.post("/api/chat", async (req, res) => {
   try {
@@ -93,89 +253,120 @@ Extremely Important JSON Response Schema Guidance:
 
 Keep your 'reply' highly conversational, scannable, engaging, and elegant. Offer a free 30-minute operational audit slot once details are shared.`;
 
-    // Convert messages history to Gemini SDK chat structure
-    // Since we want to use generateContent with structured output, let's compile history
-    const geminiContents = messages.map(msg => ({
-      role: msg.role === "assistant" ? "model" : "user",
-      parts: [{ text: typeof msg.content === "string" ? msg.content : JSON.stringify(msg.content) }]
-    }));
+    // Try alternative models if configured by the user in order of preference
+    let finalResult: any = null;
 
-    // Append context of currentLeadState to guide the model about what is already known
-    geminiContents.unshift({
-      role: "user",
-      parts: [{ text: `[SYSTEM CONTEXT: Current captured lead info is: ${JSON.stringify(currentLeadState || {})}. Continue the qualifying conversation without repeating questions for already filled fields. Introduce yourself if this is the first turn.]` }]
-    });
-
-    // Call the model with a robust retry mechanism and automatic model fallback
-    let responseText = "{}";
-    const modelsToTry = ["gemini-3.5-flash", "gemini-flash-latest", "gemini-3.1-flash-lite"];
-    let apiSuccess = false;
-
-    for (const modelName of modelsToTry) {
-      if (apiSuccess) break;
-      
-      let attempts = 3;
-      for (let attempt = 1; attempt <= attempts; attempt++) {
-        try {
-          console.log(`🤖 Attempting chatbot response with model [${modelName}], attempt ${attempt}/${attempts}...`);
-          const response = await ai.models.generateContent({
-            model: modelName,
-            contents: geminiContents,
-            config: {
-              systemInstruction,
-              responseMimeType: "application/json",
-              responseSchema: {
-                type: Type.OBJECT,
-                properties: {
-                  reply: {
-                    type: Type.STRING,
-                    description: "The next chat response to the user. Use clear, encouraging, respectful language."
-                  },
-                  leadData: {
-                    type: Type.OBJECT,
-                    description: "The updated cumulative extracted lead info.",
-                    properties: {
-                      firmName: { type: Type.STRING, description: "Name of the real estate agency or developer." },
-                      contactPerson: { type: Type.STRING, description: "First and last name of the user." },
-                      email: { type: Type.STRING, description: "Their corporate or personal email." },
-                      phone: { type: Type.STRING, description: "Their WhatsApp or mobile number." },
-                      focusArea: { type: Type.STRING, description: "Focus or pain point, e.g. Drip Sequences, Document processing, CRM sync, Reactivation." },
-                      volume: { type: Type.STRING, description: "Monthly lead count estimate." },
-                      portals: { type: Type.STRING, description: "Portals used, e.g. Property Finder, Qatarliving." }
-                    }
-                  },
-                  justQualified: {
-                    type: Type.BOOLEAN,
-                    description: "True only if we just met core qualifying parameters (Name, Firm, and Contact Method) on this turn."
-                  }
-                },
-                required: ["reply"]
-              }
-            }
-          });
-
-          if (response && response.text) {
-            responseText = response.text;
-            apiSuccess = true;
-            console.log(`✅ Success with model [${modelName}] on attempt ${attempt}`);
-            break;
-          }
-        } catch (apiErr: any) {
-          console.warn(`⚠️ Warning: Attempt ${attempt} on model [${modelName}] failed. Message:`, apiErr?.message || apiErr);
-          if (attempt < attempts) {
-            // Exponential backoff
-            await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
-          }
-        }
+    if (process.env.OPENROUTER_API_KEY) {
+      try {
+        finalResult = await callOpenRouter(messages, systemInstruction, currentLeadState);
+        console.log("✅ Success response retrieved from OpenRouter!");
+      } catch (err: any) {
+        console.error("⚠️ OpenRouter call failed:", err?.message || err);
       }
     }
 
-    if (!apiSuccess) {
-      throw new Error("All model attempts and retries failed due to extreme service load.");
+    if (!finalResult && process.env.ANTHROPIC_API_KEY) {
+      try {
+        finalResult = await callAnthropic(messages, systemInstruction, currentLeadState);
+        console.log("✅ Success response retrieved from Anthropic!");
+      } catch (err: any) {
+        console.error("⚠️ Anthropic call failed:", err?.message || err);
+      }
     }
 
-    const result = JSON.parse(responseText || "{}");
-    return res.json(result);
+    if (!finalResult && process.env.OPENAI_API_KEY) {
+      try {
+        finalResult = await callOpenAI(messages, systemInstruction, currentLeadState);
+        console.log("✅ Success response retrieved from OpenAI!");
+      } catch (err: any) {
+        console.error("⚠️ OpenAI call failed:", err?.message || err);
+      }
+    }
+
+    // Default Fallback to Gemini if no alternative succeeded or was configured
+    if (!finalResult) {
+      // Convert messages history to Gemini SDK chat structure
+      const geminiContents = messages.map(msg => ({
+        role: msg.role === "assistant" ? "model" : "user",
+        parts: [{ text: typeof msg.content === "string" ? msg.content : JSON.stringify(msg.content) }]
+      }));
+
+      // Append context of currentLeadState to guide the model about what is already known
+      geminiContents.unshift({
+        role: "user",
+        parts: [{ text: `[SYSTEM CONTEXT: Current captured lead info is: ${JSON.stringify(currentLeadState || {})}. Continue the qualifying conversation without repeating questions for already filled fields. Introduce yourself if this is the first turn.]` }]
+      });
+
+      let responseText = "{}";
+      const modelsToTry = ["gemini-3.5-flash", "gemini-flash-latest", "gemini-3.1-flash-lite"];
+      let apiSuccess = false;
+
+      for (const modelName of modelsToTry) {
+        if (apiSuccess) break;
+        
+        let attempts = 3;
+        for (let attempt = 1; attempt <= attempts; attempt++) {
+          try {
+            console.log(`🤖 Attempting chatbot response with model [${modelName}], attempt ${attempt}/${attempts}...`);
+            const response = await ai.models.generateContent({
+              model: modelName,
+              contents: geminiContents,
+              config: {
+                systemInstruction,
+                responseMimeType: "application/json",
+                responseSchema: {
+                  type: Type.OBJECT,
+                  properties: {
+                    reply: {
+                      type: Type.STRING,
+                      description: "The next chat response to the user. Use clear, encouraging, respectful language."
+                    },
+                    leadData: {
+                      type: Type.OBJECT,
+                      description: "The updated cumulative extracted lead info.",
+                      properties: {
+                        firmName: { type: Type.STRING, description: "Name of the real estate agency or developer." },
+                        contactPerson: { type: Type.STRING, description: "First and last name of the user." },
+                        email: { type: Type.STRING, description: "Their corporate or personal email." },
+                        phone: { type: Type.STRING, description: "Their WhatsApp or mobile number." },
+                        focusArea: { type: Type.STRING, description: "Focus or pain point, e.g. Drip Sequences, Document processing, CRM sync, Reactivation." },
+                        volume: { type: Type.STRING, description: "Monthly lead count estimate." },
+                        portals: { type: Type.STRING, description: "Portals used, e.g. Property Finder, Qatarliving." }
+                      }
+                    },
+                    justQualified: {
+                      type: Type.BOOLEAN,
+                      description: "True only if we just met core qualifying parameters (Name, Firm, and Contact Method) on this turn."
+                    }
+                  },
+                  required: ["reply"]
+                }
+              }
+            });
+
+            if (response && response.text) {
+              responseText = response.text;
+              apiSuccess = true;
+              console.log(`✅ Success with model [${modelName}] on attempt ${attempt}`);
+              break;
+            }
+          } catch (apiErr: any) {
+            console.warn(`⚠️ Warning: Attempt ${attempt} on model [${modelName}] failed. Message:`, apiErr?.message || apiErr);
+            if (attempt < attempts) {
+              await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
+            }
+          }
+        }
+      }
+
+      if (!apiSuccess) {
+        throw new Error("All model attempts and retries failed due to extreme service load.");
+      }
+
+      finalResult = JSON.parse(responseText || "{}");
+    }
+
+    return res.json(finalResult);
 
   } catch (error) {
     console.error("🚨 Error in server-side AI chat endpoint:", error);
