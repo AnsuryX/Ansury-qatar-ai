@@ -27,6 +27,7 @@ interface Message {
   role: 'user' | 'assistant';
   content: string;
   timestamp: Date;
+  isFallback?: boolean;
 }
 
 interface LeadState {
@@ -39,7 +40,11 @@ interface LeadState {
   portals?: string;
 }
 
-export default function AiChatWidget() {
+interface AiChatWidgetProps {
+  onOpenAudit?: () => void;
+}
+
+export default function AiChatWidget({ onOpenAudit }: AiChatWidgetProps) {
   const { language, isRtl } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -187,14 +192,15 @@ export default function AiChatWidget() {
 
     } catch (err) {
       console.error('Failed to communicate with Ansury AI chatbot endpoint:', err);
-      // Fallback response
+      // Fallback response with explicit fallback controls flag
       setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
         content: language === 'en' 
-          ? "I experienced a minor network hitch. Let's continue! What are the primary portals or CRM systems your agency currently utilizes in Doha?"
-          : "واجهت صعوبة مؤقتة في الاتصال بالشبكة. دعنا نتابع! ما هي الأنظمة أو المواقع العقارية الرئيسية التي تستخدمها شركتكم بالدوحة حالياً؟",
-        timestamp: new Date()
+          ? "I apologize, but we are currently experiencing exceptionally high server traffic on our Qatari sovereign AI nodes.\n\nTo secure your free 30-Minute Operational Audit immediately without delay, please click one of the quick options below to start a direct line with our team on WhatsApp, or launch our interactive Audit Configurator form!"
+          : "أعتذر منك بشدة، نواجه حالياً ضغطاً استثنائياً على خوادم الذكاء الاصطناعي المحلية بالدوحة.\n\nلضمان حجز جلسة التدقيق التشغيلي المجانية (مدة ٣٠ دقيقة) دون تأخير، يرجى الضغط على أحد الخيارات أدناه لبدء محادثة مباشرة مع مستشارينا على واتساب، أو تشغيل نموذج حجز التدقيق التفاعلي فوراً!",
+        timestamp: new Date(),
+        isFallback: true
       }]);
     } finally {
       setIsLoading(false);
@@ -328,7 +334,7 @@ export default function AiChatWidget() {
               </div>
             </div>
 
-            {/* Messages Stream viewport */}
+             {/* Messages Stream viewport */}
             <div className="flex-1 p-5 overflow-y-auto space-y-4 bg-[#111827] scrollbar-thin scrollbar-thumb-slate-800">
               {messages.map((msg) => (
                 <div
@@ -343,6 +349,34 @@ export default function AiChatWidget() {
                     }`}
                   >
                     {msg.content}
+                    
+                    {msg.isFallback && (
+                      <div className="mt-4 pt-3 border-t border-[#2A3650]/40 flex flex-col gap-2">
+                        <a 
+                          href="https://wa.me/97455001760"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba56] text-[#111827] font-bold py-2.5 px-3 rounded-xl text-[11px] transition-colors shadow-sm select-none"
+                        >
+                          <MessageSquare className="w-3.5 h-3.5" />
+                          <span>{language === 'en' ? 'Chat on WhatsApp Direct' : 'التحويل لمحادثة الواتساب'}</span>
+                        </a>
+                        {onOpenAudit && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              onOpenAudit();
+                              setIsOpen(false);
+                            }}
+                            className="flex items-center justify-center gap-2 bg-[#06B6D4] hover:bg-[#0891B2] text-[#111827] font-bold py-2.5 px-3 rounded-xl text-[11px] transition-colors shadow-sm cursor-pointer select-none"
+                          >
+                            <Sparkles className="w-3.5 h-3.5" />
+                            <span>{language === 'en' ? 'Launch System Audit' : 'فتح دراسة التدقيق التشغيلي'}</span>
+                          </button>
+                        )}
+                      </div>
+                    )}
+
                     <span className="block text-[8px] opacity-60 mt-1.5 text-right font-mono">
                       {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </span>
@@ -352,9 +386,17 @@ export default function AiChatWidget() {
 
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-[#1D273B] border border-[#2A3650]/40 rounded-2xl rounded-bl-none p-4 max-w-[85%] text-xs text-[#8B95A7] flex items-center gap-2">
-                    <Loader2 className="w-4 h-4 animate-spin text-[#06B6D4]" />
-                    <span>{language === 'en' ? 'Executive Advisor is thinking...' : 'المستشار يدرس الرد...'}</span>
+                  <div className="bg-[#1D273B] border border-[#2A3650]/40 rounded-2xl rounded-bl-none p-4 max-w-[85%] text-xs text-[#8B95A7] flex flex-col gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] uppercase tracking-wider font-mono text-[#06B6D4] font-semibold">
+                        {language === 'en' ? 'Executive Advisor typing' : 'المستشار التنفيذي يكتب'}
+                      </span>
+                      <div className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 bg-[#06B6D4] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
+                        <span className="w-1.5 h-1.5 bg-[#06B6D4] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
+                        <span className="w-1.5 h-1.5 bg-[#06B6D4] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}

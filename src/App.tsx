@@ -501,7 +501,7 @@ export default function App() {
 
       {/* Persistent Floating Action Buttons */}
       <WhatsAppButton />
-      <AiChatWidget />
+      <AiChatWidget onOpenAudit={handleGetStarted} />
 
     </div>
   );
