@@ -23,7 +23,7 @@ export default function TechStackModal({ isOpen, onClose }: TechStackModalProps)
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#06B6D4] animate-pulse"></span>
             <span className="text-xs font-mono font-bold text-white tracking-widest uppercase">
-              Ansury Core Tech Stack Specs
+              Ansury Systems Core Tech Stack Specs
             </span>
           </div>
           <button 

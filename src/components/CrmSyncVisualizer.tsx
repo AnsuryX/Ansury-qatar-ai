@@ -115,7 +115,7 @@ export default function CrmSyncVisualizer() {
                 </div>
                 <div className="text-center">
                   <span className="text-[10px] font-mono block text-[#8B95A7]">CORE SYSTEM</span>
-                  <span className="text-xs font-semibold text-white">Ansury Unified</span>
+                  <span className="text-xs font-semibold text-white">Ansury Systems</span>
                 </div>
               </div>
             </div>

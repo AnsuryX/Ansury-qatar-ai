@@ -12,9 +12,9 @@ export const translations = {
     auditBtn: "Request 30-Min System Audit",
 
     // Hero
-    eyebrow: "ANSURY AI — LEADING INDUSTRIAL RESPONSE AUTOMATION",
+    eyebrow: "ANSURY SYSTEMS — LEADING INDUSTRIAL RESPONSE AUTOMATION",
     heroTitle: "Your agents aren’t losing deals to bad leads. They’re losing them to slow follow-up.",
-    heroSubtitle: "Every real estate company in Qatar is buying the same leads. The competitor who closed that deal didn't have better agents — they had a faster system. Ansury AI qualifies and routes your inbound pipeline within 60 seconds, 24/7.",
+    heroSubtitle: "Every real estate company in Qatar is buying the same leads. The competitor who closed that deal didn't have better agents — they had a faster system. Ansury Systems qualifies and routes your inbound pipeline within 60 seconds, 24/7.",
     runMath: "Run Math & Live Demos",
 
     // Stats Grid
@@ -25,7 +25,7 @@ export const translations = {
     statsMainDescBold1: "1,200 inbound leads per month",
     statsMainDescMid: " was spending ",
     statsMainDescBold2: "$7,200 every month",
-    statsMainDescAfter: " in agent time just to qualify them. Ansury replaced 70% of that process. Net monthly savings: ",
+    statsMainDescAfter: " in agent time just to qualify them. Ansury Systems replaced 70% of that process. Net monthly savings: ",
     statsMainDescBold3: "$3,540",
     statsMainDescAfter2: ". The system paid for itself in ",
     statsMainDescBold4: "3.4 months",
@@ -34,7 +34,7 @@ export const translations = {
     statsMainDescEnd: ". That's not a projection — it's the math.",
 
     crmCardTitle: '"We already have a CRM."',
-    crmCardDesc: "So did every agency that's missing their quarterly target. CRMs record history; Ansury AI captures the future in the first 8 minutes when user intent peaks.",
+    crmCardDesc: "So did every agency that's missing their quarterly target. CRMs record history; Ansury Systems captures the future in the first 8 minutes when user intent peaks.",
     
     hoursSavedTitle: "160 Hours Saved",
     hoursSavedDesc: "1,200 leads a month. 8 minutes each. That's 160 hours your team will never get back. This month. And next month.",
@@ -104,7 +104,7 @@ export const translations = {
     
     // Bottom Section
     readyTitle: "Ready to Automate Your Portfolio?",
-    readyDesc: "Join the leading industrial operators in Qatar who leverage Ansury AI for precision management.",
+    readyDesc: "Join the leading industrial operators in Qatar who leverage Ansury Systems for precision management.",
     startIntegration: "Start Your Integration",
     footerText: "Precision Industrial Automation for Qatar Real Estate. Delivering intelligence and efficiency to the GCC's leading property firms.",
     legal: "LEGAL",
@@ -126,9 +126,9 @@ export const translations = {
     auditBtn: "طلب تدقيق فني فوري (30 دقيقة)",
 
     // Hero
-    eyebrow: "أنسوري للذكاء الاصطناعي — ريادة أتمتة الاستجابة الصناعية بالخليج",
+    eyebrow: "أنسوري للأنظمة — ريادة أتمتة الاستجابة الصناعية بالخليج",
     heroTitle: "وكلاؤك لا يخسرون الصفقات بسبب رداءة العملاء المستهدفين، بل يخسرونها بسبب بطء المتابعة.",
-    heroSubtitle: "كل شركة عقارية في قطر تشتري وتنافس على نفس قائمة العملاء المستهدفين. المنافس الذي حسم تلك الصفقة لم يكن يملك وكلاء أفضل — بل كان يملك نظاماً أسرع ومستعداً للإجابة فوراً. يقوم نظام أنسوري بتأهيل وتوجيه طلباتك الواردة خلال 60 ثانية، على مدار الساعة.",
+    heroSubtitle: "كل شركة عقارية في قطر تشتري وتنافس على نفس قائمة العملاء المستهدفين. المنافس الذي حسم تلك الصفقة لم يكن يملك وكلاء أفضل — بل كان يملك نظاماً أسرع ومستعداً للإجابة فوراً. تقوم أنظمة أنسوري بتأهيل وتوجيه طلباتك الواردة خلال 60 ثانية، على مدار الساعة.",
     runMath: "العروض الحية وحساب العوائد",
 
     // Stats Grid
@@ -139,7 +139,7 @@ export const translations = {
     statsMainDescBold1: "1,200 عميل مستهدف شهرياً",
     statsMainDescMid: " كان ينفق ",
     statsMainDescBold2: "7,200 دولار كل شهر",
-    statsMainDescAfter: " من وقت وكلائه لتأهيلهم يدوياً فقط. استبدل نظام أنسوري 70٪ من تلك العملية الفاقدة للجدوى. صافي التوفير الشهري: ",
+    statsMainDescAfter: " من وقت وكلائه لتأهيلهم يدوياً فقط. استبدلت أنظمة أنسوري 70٪ من تلك العملية الفاقدة للجدوى. صافي التوفير الشهري: ",
     statsMainDescBold3: "3,540 دولار",
     statsMainDescAfter2: ". استرد النظام تكلفته بالكامل في غضون ",
     statsMainDescBold4: "3.4 أشهر",
@@ -148,7 +148,7 @@ export const translations = {
     statsMainDescEnd: ". هذه ليست مجرد أمنيات أو إسقاطات عاطفية — بل الحسابات الرياضية الدقيقة للشركات.",
 
     crmCardTitle: '"لدينا بالفعل نظام إدارة علاقات العملاء (CRM)"',
-    crmCardDesc: "وكذلك كانت كل وكالة عقارية تفوت أهدافها المبيعية الربع سنوية. تسجل منصات الـ CRM التاريخ القديم فقط؛ بينما يلتقط ذكاء أنسوري المستقبل والصفقة في أول 8 دقائق عندما تبلغ رغبة العميل وجديته ذروتها.",
+    crmCardDesc: "وكذلك كانت كل وكالة عقارية تفوت أهدافها المبيعية الربع سنوية. تسجل منصات الـ CRM التاريخ القديم فقط؛ بينما تلتقط أنظمة أنسوري المستقبل والصفقة في أول 8 دقائق عندما تبلغ رغبة العميل وجديته ذروتها.",
     
     hoursSavedTitle: "توفير 160 ساعة عمل",
     hoursSavedDesc: "عند ورود 1,200 عميل شهرياً واستغراق 8 دقائق للرد على كل منهم، فهذا يضيع 160 ساعة من فريقك لن تستعيدها أبداً هذا الشهر وكل شهر.",
@@ -218,7 +218,7 @@ export const translations = {
 
     // Bottom Section
     readyTitle: "هل أنت مستعد لأتمتة محفظتك العقارية؟",
-    readyDesc: "انضم إلى رواد التشغيل والتمكين العقاري في دولة قطر الذين يعتمدون على ذكاء أنسوري الاصطناعي لإدارة فائقة الدقة والإنتاجية.",
+    readyDesc: "انضم إلى رواد التشغيل والتمكين العقاري في دولة قطر الذين يعتمدون على أنظمة أنسوري لإدارة فائقة الدقة والإنتاجية.",
     startIntegration: "ابدأ دمج نظامك الآن",
     footerText: "أنظمة الأتمتة والذكاء الصناعي المتقدم لقطاع العقارات في دولة قطر. تقديم حلول ذكية فائقة الموثوقية للمؤسسات والشركات الرائدة بالخليج العربي.",
     legal: "معلومات قانونية",

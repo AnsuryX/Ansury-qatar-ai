@@ -46,10 +46,10 @@ export default function FaqSection() {
       category: 'qualification',
       badgeEn: 'PORTAL INGESTION',
       badgeAr: 'سحب العملاء فورياً',
-      qEn: 'How does Ansury AI intercept leads from Property Finder, Bayut, and WhatsApp?',
-      qAr: 'كيف يقوم نظام أنسوري باعتراض وسحب العملاء من بوابات بروبرتي فايندر وبيوت والواتساب؟',
-      aEn: 'Ansury integrates directly with official property portal webhooks, email parsers, and the WhatsApp Business API. The moment an inquiry is generated on Property Finder or Bayut, our engine intercepts it in under 5 seconds, triggering the automated qualification cycle before any manual broker delay can occur.',
-      aAr: 'يتكامل نظام أنسوري مباشرةً مع قنوات ربط الويب (Webhooks) الرسمية للبوابات العقارية ومحللات البريد الإلكتروني، والواجهة البرمجية لواتساب للأعمال. في اللحظة التي يتم فيها تسجيل استفسار على بروبرتي فايندر أو بيوت، يعترض محركنا الطلب في أقل من ٥ ثوانٍ، مطلقاً دورة التأهيل والفلترة تلقائياً قبل حدوث أي تأخير يدوي من الوسطاء.'
+      qEn: 'How does Ansury Systems intercept leads from Property Finder, Bayut, and WhatsApp?',
+      qAr: 'كيف تقوم أنظمة أنسوري باعتراض وسحب العملاء من بوابات بروبرتي فايندر وبيوت والواتساب؟',
+      aEn: 'Ansury Systems integrates directly with official property portal webhooks, email parsers, and the WhatsApp Business API. The moment an inquiry is generated on Property Finder or Bayut, our engine intercepts it in under 5 seconds, triggering the automated qualification cycle before any manual broker delay can occur.',
+      aAr: 'تتكامل أنظمة أنسوري مباشرةً مع قنوات ربط الويب (Webhooks) الرسمية للبوابات العقارية ومحللات البريد الإلكتروني، والواجهة البرمجية لواتساب للأعمال. في اللحظة التي يتم فيها تسجيل استفسار على بروبرتي فايندر أو بيوت، يعترض محركنا الطلب في أقل من ٥ ثوانٍ، مطلقاً دورة التأهيل والفلترة تلقائياً قبل حدوث أي تأخير يدوي من الوسطاء.'
     },
     {
       id: 'q2',
@@ -66,7 +66,7 @@ export default function FaqSection() {
       category: 'crm',
       badgeEn: 'ENTERPRISE CRM',
       badgeAr: 'مزامنة الأنظمة',
-      qEn: 'Does Ansury support bidirectional synchronization with HubSpot and Salesforce?',
+      qEn: 'Does Ansury Systems support bidirectional synchronization with HubSpot and Salesforce?',
       qAr: 'هل تدعم أنظمة أنسوري المزامنة ثنائية الاتجاه مع HubSpot وSalesforce؟',
       aEn: 'Yes, fully. We establish secure REST API connections with HubSpot, Salesforce, and custom CRM systems. Once qualified, the lead is pushed instantly along with a comprehensive qualification summary, raw conversation transcripts, and prioritized broker task allocations. Updates inside your CRM can also update the AI\'s follow-up protocol.',
       aAr: 'نعم، وبشكل كامل. نقوم بإنشاء اتصالات برمجية آمنة وموثقة (REST API) مع HubSpot وSalesforce وأنظمة إدارة العملاء العقارية المخصصة. بمجرد انتهاء التأهيل، يتم ترحيل العميل فوراً مع ملخص تأهيلي منظم، والنص الكامل للمحادثة، وتنبيه فوري لوسيط المبيعات المناسب. كما يمكن لأي تحديث تجرونه داخل نظامكم أن يعدل بروتوكول تتبع الذكاء الاصطناعي.'
@@ -78,8 +78,8 @@ export default function FaqSection() {
       badgeAr: 'منع تكرار السجلات',
       qEn: 'How are duplicate leads from different property portals managed?',
       qAr: 'كيف يتم التعامل مع تكرار العملاء من بوابات عقارية مختلفة؟',
-      aEn: 'The system utilizes a precise client ledger framework. If the same user submits inquiries on both Property Finder and WhatsApp within a given timeframe, Ansury merges the transcripts into a single unified customer profile inside your CRM, preventing multiple brokers from double-calling and protecting your brand reputation.',
-      aAr: 'يعتمد النظام على إطار عمل متطور لفرز السجلات وحمايتها من التكرار. إذا أرسل العميل نفسه استفسارات متعددة عبر بروبرتي فايندر وقناة الواتساب خلال فترة زمنية متقاربة، يدمج نظام أنسوري الحوارات والبيانات في ملف موحد لعميل واحد داخل نظامكم، مما يمنع تعارض وتكرار مكالمات الوسطاء ويحمي مصداقية وسمعة علامتكم.'
+      aEn: 'The system utilizes a precise client ledger framework. If the same user submits inquiries on both Property Finder and WhatsApp within a given timeframe, Ansury Systems merges the transcripts into a single unified customer profile inside your CRM, preventing multiple brokers from double-calling and protecting your brand reputation.',
+      aAr: 'يعتمد النظام على إطار عمل متطور لفرز السجلات وحمايتها من التكرار. إذا أرسل العميل نفسه استفسارات متعددة عبر بروبرتي فايندر وقناة الواتساب خلال فترة زمنية متقاربة، تدمج أنظمة أنسوري الحوارات والبيانات في ملف موحد لعميل واحد داخل نظامكم، مما يمنع تعارض وتكرار مكالمات الوسطاء ويحمي مصداقية وسمعة علامتكم.'
     },
     {
       id: 'q5',
@@ -118,8 +118,8 @@ export default function FaqSection() {
       badgeAr: 'استمرارية الخدمة',
       qEn: 'What is the system uptime and fall-back protocol during connection drops?',
       qAr: 'ما هو معدل استمرارية تشغيل النظام وبروتوكول الطوارئ عند حدوث انقطاع للاتصالات؟',
-      aEn: 'Ansury operates on highly redundant cloud clusters with a certified 99.98% operational uptime. If a target CRM or webhook experiences a temporary drop, Ansury safely queues qualified leads on our offline-first encrypted databases, automatically retrying every 120 seconds until synchronization is confirmed.',
-      aAr: 'تعمل أنسوري على مجموعات سحابية سريعة واحتياطية بمعدل تشغيل مستمر معتمد يبلغ ٩٩.٩٨٪. في حال حدوث عطل طارئ أو بطء في مزامنة نظام إدارة العملاء، تخزن أنسوري سجلات العملاء المؤهلين بأمان فوري في قواعد بيانات محلية مشفرة، وتعاود محاولات الربط تلقائياً كل ١٢٠ ثانية حتى اكتمال النقل لتفادي أي فقد.'
+      aEn: 'Ansury Systems operates on highly redundant cloud clusters with a certified 99.98% operational uptime. If a target CRM or webhook experiences a temporary drop, Ansury Systems safely queues qualified leads on our offline-first encrypted databases, automatically retrying every 120 seconds until synchronization is confirmed.',
+      aAr: 'تعمل أنظمة أنسوري على مجموعات سحابية سريعة واحتياطية بمعدل تشغيل مستمر معتمد يبلغ ٩٩.٩٨٪. في حال حدوث عطل طارئ أو بطء في مزامنة نظام إدارة العملاء، تخزن أنظمة أنسوري سجلات العملاء المؤهلين بأمان فوري في قواعد بيانات محلية مشفرة، وتعاود محاولات الربط تلقائياً كل ١٢٠ ثانية حتى اكتمال النقل لتفادي أي فقد.'
     }
   ];
 

@@ -443,13 +443,13 @@ export default function App() {
           
           <div className="mb-8 md:mb-0 flex flex-col gap-4">
             <div className={`text-xl font-bold font-sora text-[#06B6D4] ${isRtl ? 'text-right' : 'text-left'}`}>
-              Ansury AI
+              Ansury Systems
             </div>
             <p className={`font-sans text-[#8B95A7] text-xs max-w-sm leading-relaxed ${isRtl ? 'text-right' : 'text-left'}`}>
               {copy.footerText}
             </p>
             <div className={`text-[#8B95A7] text-[11px] font-mono mt-2`}>
-              © 2026 Ansury AI.
+              © 2026 Ansury Systems.
             </div>
           </div>
 

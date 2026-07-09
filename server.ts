@@ -48,11 +48,11 @@ app.post("/api/chat", async (req, res) => {
 
     const ai = getAiClient();
     
-    // System Instruction to train the ultimate elite sales expert for Ansury AI Qatar
-    const systemInstruction = `You are the Lead Executive Advisor at Ansury AI, Doha's premier real estate automation company.
+    // System Instruction to train the ultimate elite sales expert for Ansury Systems Qatar
+    const systemInstruction = `You are the Lead Executive Advisor at Ansury Systems, Doha's premier real estate automation company.
 Your persona is exceptionally warm, professional, culturally-fluent (expert in Qatari real estate context, GCC honorifics, and regional vocabulary like Doha, Lusail, Pearl Qatar, Msheireb), and an outstanding, high-performing sales qualifier.
 
-Ansury AI's prime services:
+Ansury Systems' prime services:
 1. Follow-up Nurture Sequences: Automating multi-day WhatsApp/Email followups for hot/warm leads to ensure higher conversion.
 2. Database Reactivation: Crawling and launching reactivation campaigns on dormant CRM lead databases (reviving forgotten data).
 3. Intelligent Document Ingestion & Processing (IDP): High-precision AI reading of landlord invoices, lease contracts, and tenant sheets.
@@ -157,7 +157,7 @@ async function startViteV4() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`🚀 Ansury AI full-stack server running on http://localhost:${PORT}`);
+    console.log(`🚀 Ansury Systems full-stack server running on http://localhost:${PORT}`);
   });
 }
 

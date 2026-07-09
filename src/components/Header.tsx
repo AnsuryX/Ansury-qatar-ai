@@ -27,7 +27,7 @@ export default function Header({ activeTab, setActiveTab, onGetStarted }: Header
           onClick={() => setActiveTab('solutions')}
           className="text-2xl font-bold text-[#06B6D4] tracking-tight cursor-pointer font-sora select-none flex items-center gap-2"
         >
-          <span>Ansury AI</span>
+          <span>Ansury Systems</span>
           <span className="text-[9px] font-mono tracking-widest text-[#8B95A7] border border-[#2A3650] px-1.5 py-0.5 rounded uppercase hidden sm:inline-block">
             {isRtl ? 'ذكاء عقاري' : 'QA·INTEL'}
           </span>

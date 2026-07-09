@@ -10,8 +10,8 @@ export default function WhatsAppButton() {
   // Pre-filled target WhatsApp details
   const whatsappNumber = '+97455001760'; // Doha, Qatar demonstration/real operator pipeline
   
-  const defaultMessageEn = "Marhaban, I am interested in deploying Ansury AI for our real estate portfolio in Doha. Please share the integration requirements.";
-  const defaultMessageAr = "مرحباً، أود الاستفسار عن تفعيل أنظمة أنسوري للذكاء الاصطناعي لمحفظتنا العقارية في الدوحة. يرجى تزويدنا بمتطلبات الدمج.";
+  const defaultMessageEn = "Marhaban, I am interested in deploying Ansury Systems for our real estate portfolio in Doha. Please share the integration requirements.";
+  const defaultMessageAr = "مرحباً، أود الاستفسار عن تفعيل أنظمة أنسوري لمحفظتنا العقارية في الدوحة. يرجى تزويدنا بمتطلبات الدمج.";
 
   const handleOpenChat = (msgText: string) => {
     const finalMsg = encodeURIComponent(msgText || (language === 'en' ? defaultMessageEn : defaultMessageAr));
@@ -41,7 +41,7 @@ export default function WhatsAppButton() {
               <div className="w-2.5 h-2.5 rounded-full bg-[#25D366] animate-pulse"></div>
               <div>
                 <h4 className="text-xs font-bold font-sora text-white">
-                  {language === 'en' ? 'Ansury AI Direct Line' : 'الخط المباشر لأنسوري'}
+                  {language === 'en' ? 'Ansury Systems Direct Line' : 'الخط المباشر لأنسوري'}
                 </h4>
                 <p className="text-[10px] text-[#8B95A7] font-sans text-left">
                   {language === 'en' ? 'Doha HQ — Response < 2m' : 'مقر الدوحة — استجابة فورية'}

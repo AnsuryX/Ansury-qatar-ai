@@ -70,7 +70,7 @@ export default function CaseStudiesSection() {
           client: "United Property Partners",
           stats: "-92% Response Delay",
           title: "Automating 500+ Luxury Leads with HubSpot",
-          desc: "By integrating directly with their Property Finder and WhatsApp portals, Ansury AI qualifies inquiries about off-plan apartments inside 45 seconds, routing verified buyers directly to senior brokers' phones.",
+          desc: "By integrating directly with their Property Finder and WhatsApp portals, Ansury Systems qualifies inquiries about off-plan apartments inside 45 seconds, routing verified buyers directly to senior brokers' phones.",
           m1Val: "42s",
           m1Lbl: "Response Latency",
           m2Val: "+24%",
@@ -81,7 +81,7 @@ export default function CaseStudiesSection() {
           client: "Doha Prestige Group",
           stats: "$5,400 Monthly Savings",
           title: "Zero-Latency Lead Triage for Commercial Tower Pipelines",
-          desc: "Commercial assets require complex qualification filters. Ansury AI filters corporate inquiries, matches space requirements with available stock layouts, and logs leads directly in Salesforce.",
+          desc: "Commercial assets require complex qualification filters. Ansury Systems filters corporate inquiries, matches space requirements with available stock layouts, and logs leads directly in Salesforce.",
           m1Val: "1,140 hrs",
           m1Lbl: "Broker Hours Reallocated",
           m2Val: "89%",
@@ -100,10 +100,10 @@ export default function CaseStudiesSection() {
         }
       ],
       testimonialsTitle: "Authority in Action — Partner Testimonials",
-      testimonialsSubtitle: "Hear from managing directors and digital leaders optimizing their real estate pipelines with Ansury AI.",
+      testimonialsSubtitle: "Hear from managing directors and digital leaders optimizing their real estate pipelines with Ansury Systems.",
       testimonialsList: [
         {
-          quote: "Ansury AI completely changed how we structure recruitment. Instead of hiring agents to browse portals and copy-paste messages, we let Ansury qualify the buyers first inside 60 seconds. Our agents are actually closing deals instead of fighting response lag.",
+          quote: "Ansury Systems completely changed how we structure recruitment. Instead of hiring agents to browse portals and copy-paste messages, we let Ansury Systems qualify the buyers first inside 60 seconds. Our agents are actually closing deals instead of fighting response lag.",
           author: "Yousef Al-Kuwari",
           role: "Managing Director",
           company: "Lusail Premier Properties"
@@ -115,7 +115,7 @@ export default function CaseStudiesSection() {
           company: "Doha Skyline Group"
         },
         {
-          quote: "Sovereign local cloud housing was a non-negotiable directive for our group assets. Ansury AI operates 100% on a secure Doha-based micro-server stack, delivering immense speed while guaranteeing compliance with Qatari privacy legislation.",
+          quote: "Sovereign local cloud housing was a non-negotiable directive for our group assets. Ansury Systems operates 100% on a secure Doha-based micro-server stack, delivering immense speed while guaranteeing compliance with Qatari privacy legislation.",
           author: "Abdulrahman Al-Hammadi",
           role: "VP of Enterprise Development",
           company: "Qatar Sovereign Holdings"
@@ -172,7 +172,7 @@ export default function CaseStudiesSection() {
           client: "المتحدة للشركاء العقاريين",
           stats: "تقليص زمن الاستجابة ٩٢٪",
           title: "أتمتة أكثر من ٥٠٠ عميل فاخر مع مزامنة كاملة لـ HubSpot",
-          desc: "من خلال التكامل المباشر مع بوابات بروبرتي فايندر وقنوات الواتساب، يقوم نظام أنسوري بتأهيل الاستفسارات السكنية في أقل من ٤٥ ثانية، موجهاً المشترين الجادين مباشرة إلى كبار وسطاء المبيعات.",
+          desc: "من خلال التكامل المباشر مع بوابات بروبرتي فايندر وقنوات الواتساب، تقوم أنظمة أنسوري بتأهيل الاستفسارات السكنية في أقل من ٤٥ ثانية، موجهاً المشترين الجادين مباشرة إلى كبار وسطاء المبيعات.",
           m1Val: "٤٢ ثانية",
           m1Lbl: "زمن الاستجابة للطلب",
           m2Val: "+٢٤٪",
@@ -183,7 +183,7 @@ export default function CaseStudiesSection() {
           client: "مجموعة الدوحة المرموقة",
           stats: "توفير شهري ٥،٤٠٠ دولار",
           title: "تصفية وفرز العملاء فوري المزامنة للأبراج التجارية الكبرى",
-          desc: "تتطلب الأصول التجارية مرشحات تصفية دقيقة ومعقدة. يقوم نظام أنسوري بفرز الاستفسارات وتطابق المساحات المطلوبة بالملفات المتاحة لديهم وتسجيلها مباشرة على Salesforce.",
+          desc: "تتطلب الأصول التجارية مرشحات تصفية دقيقة ومعقدة. تقوم أنظمة أنسوري بفرز الاستفسارات وتطابق المساحات المطلوبة بالملفات المتاحة لديهم وتسجيلها مباشرة على Salesforce.",
           m1Val: "١،١٤٠ ساعة",
           m1Lbl: "ساعات عمل موفرة للوسطاء",
           m2Val: "٨٩٪",
@@ -202,10 +202,10 @@ export default function CaseStudiesSection() {
         }
       ],
       testimonialsTitle: "كفاءة موثقة — شهادات شركائنا في قطر",
-      testimonialsSubtitle: "استمع إلى شهادات المدراء التنفيذيين وقادة التحول الرقمي المطورين لأعمالهم اعتماداً على ذكاء أنسوري الاصطناعي.",
+      testimonialsSubtitle: "استمع إلى شهادات المدراء التنفيذيين وقادة التحول الرقمي المطورين لأعمالهم اعتماداً على أنظمة أنسوري الذكية.",
       testimonialsList: [
         {
-          quote: "لقد غيّر ذكاء أنسوري فكرتنا تماماً عن التوظيف العقاري. بدلاً من توظيف وسطاء لتصفح البوابات ونسخ الردود، ندع أنسوري يؤهل المشتري أولاً خلال ٦٠ ثانية. وكلاؤنا الآن يبرمون صفقات فعلية بدلاً من محاربة تأخر الردود.",
+          quote: "لقد غيّرت أنظمة أنسوري فكرتنا تماماً عن التوظيف العقاري. بدلاً من توظيف وسطاء لتصفح البوابات ونسخ الردود، ندع أنظمة أنسوري تؤهل المشتري أولاً خلال ٦٠ ثانية. وكلاؤنا الآن يبرمون صفقات فعلية بدلاً من محاربة تأخر الردود.",
           author: "يوسف الكواري",
           role: "المدير العام",
           company: "عقارات لوسيل العقارية المتميزة"

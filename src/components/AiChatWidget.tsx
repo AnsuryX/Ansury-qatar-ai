@@ -56,8 +56,8 @@ export default function AiChatWidget() {
   // Populate first welcoming message
   useEffect(() => {
     if (messages.length === 0) {
-      const welcomeEn = "Marhaban! I am your Ansury AI Executive Consultant. I assist Qatari real estate brokers and developers in automating multi-touch WhatsApp sequences, re-engaging old databases, and processing complex lease documents.\n\nCould you please share your name and the name of your real estate agency? I can structure a complimentary 30-Minute Operational Audit for your portfolio.";
-      const welcomeAr = "مرحباً بك! أنا مستشارك التنفيذي من أنسوري للذكاء الاصطناعي. أساعد المكاتب العقارية والمطورين في قطر على أتمتة سلاسل متابعة الواتساب، وإعادة تنشيط قواعد البيانات القديمة، وقراءة العقود آلياً.\n\nيسعدني التعرف على اسمك الكريم واسم شركتك العقارية لنبدأ بتصميم تدقيق تشغيلي مجاني لمدة ٣٠ دقيقة لمحفظتك.";
+      const welcomeEn = "Marhaban! I am your Ansury Systems Executive Consultant. I assist Qatari real estate brokers and developers in automating multi-touch WhatsApp sequences, re-engaging old databases, and processing complex lease documents.\n\nCould you please share your name and the name of your real estate agency? I can structure a complimentary 30-Minute Operational Audit for your portfolio.";
+      const welcomeAr = "مرحباً بك! أنا مستشارك التنفيذي من أنسوري للأنظمة. أساعد المكاتب العقارية والمطورين في قطر على أتمتة سلاسل متابعة الواتساب، وإعادة تنشيط قواعد البيانات القديمة، وقراءة العقود آلياً.\n\nيسعدني التعرف على اسمك الكريم واسم شركتك العقارية لنبدأ بتصميم تدقيق تشغيلي مجاني لمدة ٣٠ دقيقة لمحفظتك.";
       
       setMessages([
         {
@@ -101,7 +101,7 @@ export default function AiChatWidget() {
       const body = new URLSearchParams();
       body.append('entry.1843495534', finalLead.firmName || 'Unspecified Chat Agency');
       body.append('entry.1040784031', finalLead.contactPerson || 'Unspecified Chat Name');
-      body.append('entry.1890684236', finalLead.email || 'no-email@ansury.ai');
+      body.append('entry.1890684236', finalLead.email || 'no-email@ansury.systems');
       body.append('entry.1015656115', finalLead.phone || 'no-phone');
       body.append('entry.679401230', finalLead.focusArea || 'AI Chatbot Consultation');
       body.append('entry.200195860', finalLead.volume || 'Not quantified yet');

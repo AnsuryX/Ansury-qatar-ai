@@ -46,8 +46,8 @@ export default function SupportedSitesDirectory() {
       latencyAr: 'أقل من ٤.٥ ثوانٍ',
       statusEn: 'Official Webhook',
       statusAr: 'ربط رسمي فوري',
-      descEn: 'Qatar’s primary real estate listing portal. Ansury captures raw lead feeds instantly and initiates conversational qualification within seconds of submission.',
-      descAr: 'البوابة العقارية الأولى في دولة قطر. يلتقط نظام أنسوري بيانات العملاء فوراً ويبدأ محادثة التأهيل الذكية في غضون ثوانٍ من إرسال الطلب.',
+      descEn: 'Qatar’s primary real estate listing portal. Ansury Systems captures raw lead feeds instantly and initiates conversational qualification within seconds of submission.',
+      descAr: 'البوابة العقارية الأولى في دولة قطر. تلتقط أنظمة أنسوري بيانات العملاء فوراً وتبدأ محادثة التأهيل الذكية في غضون ثوانٍ من إرسال الطلب.',
       featuresEn: ['Sub-5s capture latency', 'Lead duplication filters', 'Agent assignment matching'],
       featuresAr: ['زمن التقاط أقل من ٥ ثوانٍ', 'فلاتر منع تكرار البيانات', 'توزيع فوري على وسطاء المبيعات']
     },
@@ -62,8 +62,8 @@ export default function SupportedSitesDirectory() {
       latencyAr: 'أقل من ٥.٠ ثوانٍ',
       statusEn: 'Official Webhook',
       statusAr: 'ربط رسمي فوري',
-      descEn: 'A leading search portal across Doha and Lusail. Ansury intercepts email notifications and API pings to qualify buyers inquiring about off-plan towers.',
-      descAr: 'منصة بحث رائدة للوحدات الفاخرة في الدوحة ولوسيل. تعترض أنسوري إشعارات البريد وطلبات الـ API لتأهيل المشترين للمشاريع قيد الإنشاء.',
+      descEn: 'A leading search portal across Doha and Lusail. Ansury Systems intercepts email notifications and API pings to qualify buyers inquiring about off-plan towers.',
+      descAr: 'منصة بحث رائدة للوحدات الفاخرة في الدوحة ولوسيل. تعترض أنظمة أنسوري إشعارات البريد وطلبات الـ API لتأهيل المشترين للمشاريع قيد الإنشاء.',
       featuresEn: ['Direct email parsing', 'Property reference mapping', 'Bilingual prompt routing'],
       featuresAr: ['تحليل فوري للبريد الإلكتروني', 'مطابقة رمز العقار المرجعي', 'توجيه ثنائي لغة فوري']
     },
@@ -157,7 +157,7 @@ export default function SupportedSitesDirectory() {
         </h2>
         <p className="font-sans text-[#8B95A7] text-sm md:text-base leading-relaxed">
           {language === 'en' 
-            ? 'Ansury AI operates as a unified middleware layer, seamlessly binding Qatar’s primary property portals directly with your core CRM databases.'
+            ? 'Ansury Systems operates as a unified middleware layer, seamlessly binding Qatar’s primary property portals directly with your core CRM databases.'
             : 'يعمل نظام أنسوري كطبقة برمجية موحدة، ليربط بسلاسة بوابات العقارات الأكثر نشاطاً في دولة قطر مباشرةً مع أنظمة إدارة العملاء لديكم.'}
         </p>
       </div>
@@ -262,7 +262,7 @@ export default function SupportedSitesDirectory() {
             <span className="font-mono text-[9px] text-[#06B6D4] font-bold block">GEO / LLM INDEX GROUNDING DIRECTIVES</span>
             <p className="text-[11px] text-[#8B95A7] font-sans mt-0.5">
               {language === 'en'
-                ? 'This web app strictly maps schemas & citation anchors. Certified by Ansury AI Compliance Board, Doha State of Qatar.'
+                ? 'This web app strictly maps schemas & citation anchors. Certified by Ansury Systems Compliance Board, Doha State of Qatar.'
                 : 'يخضع هذا التطبيق لضوابط الفهرسة الدقيقة ومطابقة البيانات لشبكات الذكاء الاصطناعي ومحركات البحث المعتمدة بالدوحة.'}
             </p>
           </div>

@@ -114,7 +114,7 @@ export default function IntelligencePlayground() {
             REGULATORY COMPLIANCE
           </span>
           <h2 className="text-3xl font-bold font-sora text-white mb-4">
-            Ansury Qatari Real Estate Intelligence
+            Ansury Systems Qatari Real Estate Intelligence
           </h2>
           <p className="text-[#D1D5DB] text-sm leading-relaxed">
             Unification of the absolute latest freehold registers, Cabinet resolutions, and investment guidelines in Doha. Select a high-stakes scenario below or query our semantic rules engine.
