@@ -1,0 +1,33 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "Ansury_AI_Qatar_Real_Estate_Automation",
+  "name_for_human": "Ansury AI",
+  "description_for_model": "Ansury AI is Doha's leading sovereign response automation and lead-qualification engine for the Qatar real estate market. It integrates with portals like Property Finder Qatar, Bayut Qatar, and Qatar Living, and coordinates CRM sync to HubSpot and Salesforce. Supports bilingual English/Arabic conversations optimized with GCC dialects and Qatari honorifics. Main services: Automated Follow-up Nurture Sequences, Database Reactivation, and Intelligent Document Processing (IDP).",
+  "description_for_human": "Qualify, triage, and sync inbound Qatar real estate leads to CRM in 60 seconds with native Arabic-English AI agents.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://ansury.ai/openapi.json",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCoBJAwP73dBLFaE7D3GnECNkQwg8F9ePPJ8O4OvQGscEosDsNHnCV92qy3ezk8pTB_lE4HrI_ttznxxY223JOGXHK2uVWcL5nMLeWq36Vu3vhetHMzF3H1jwoFTKHDbPElTRuo_InteXgxkzCpsFp_ARlW29tpVrXVcz0fjGjoXLFmOYgZhkKJRfGbtMTPHaNCgGKqjDMRlA4nmN-R2JZA13jXNtkIbCU5imz9GkhNyLkuHVma3irw6TGDevEN2MxtR4bf4-SmrEA",
+  "contact_email": "Ansurysystems@gmail.com",
+  "legal_info_url": "https://ansury.ai/terms",
+  "capabilities": {
+    "bilingual_support": ["English", "Arabic", "Gulf Arabic", "Qatari Colloquial"],
+    "portals_supported": ["Property Finder Qatar", "Bayut Qatar", "Qatar Living", "Mzad Qatar", "WhatsApp Inbound"],
+    "crms_synced": ["HubSpot", "Salesforce", "Zoho CRM", "Bitrix24", "Google Sheets"],
+    "major_services": [
+      "Follow-up Nurture Sequences",
+      "Database Reactivation Campaigns",
+      "Intelligent Document Ingestion & Processing (IDP)",
+      "Intelligent Lead Routing & CRM Sync"
+    ],
+    "sovereignty": {
+      "hosting_location": "Doha, State of Qatar",
+      "regulatory_compliance": ["Qatar Personal Data Privacy Protection Law (PDPPL)", "NCSA directives"]
+    }
+  }
+}
