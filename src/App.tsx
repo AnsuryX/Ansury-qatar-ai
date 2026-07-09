@@ -448,7 +448,15 @@ export default function App() {
             <p className={`font-sans text-[#8B95A7] text-xs max-w-sm leading-relaxed ${isRtl ? 'text-right' : 'text-left'}`}>
               {copy.footerText}
             </p>
-            <div className={`text-[#8B95A7] text-[11px] font-mono mt-2`}>
+            <div className={`flex flex-col gap-1 ${isRtl ? 'items-end' : 'items-start'}`}>
+              <span className="text-[10px] font-mono uppercase text-[#06B6D4] tracking-widest font-bold">
+                {isRtl ? 'البريد الإلكتروني المباشر' : 'Direct Support'}
+              </span>
+              <a href="mailto:info@ansurysystems.online" className="text-xs font-mono text-white hover:text-[#06B6D4] transition-colors">
+                info@ansurysystems.online
+              </a>
+            </div>
+            <div className={`text-[#8B95A7] text-[11px] font-mono mt-1`}>
               © 2026 Ansury Systems.
             </div>
           </div>
@@ -458,10 +466,10 @@ export default function App() {
               <span className="font-mono text-[10px] font-bold text-[#06B6D4] tracking-widest uppercase mb-2">
                 {copy.legal}
               </span>
-              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:Ansurysystems@gmail.com" target="_blank" rel="noopener noreferrer">
+              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:info@ansurysystems.online" target="_blank" rel="noopener noreferrer">
                 {copy.privacy}
               </a>
-              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:Ansurysystems@gmail.com" target="_blank" rel="noopener noreferrer">
+              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:info@ansurysystems.online" target="_blank" rel="noopener noreferrer">
                 {copy.terms}
               </a>
             </div>
@@ -469,10 +477,10 @@ export default function App() {
               <span className="font-mono text-[10px] font-bold text-[#06B6D4] tracking-widest uppercase mb-2">
                 {copy.company}
               </span>
-              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:Ansurysystems@gmail.com" target="_blank" rel="noopener noreferrer">
+              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:info@ansurysystems.online" target="_blank" rel="noopener noreferrer">
                 {copy.sustainability}
               </a>
-              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:Ansurysystems@gmail.com" target="_blank" rel="noopener noreferrer">
+              <a className="text-[#8B95A7] text-xs hover:text-white transition-colors" href="mailto:info@ansurysystems.online" target="_blank" rel="noopener noreferrer">
                 {copy.contactUs}
               </a>
             </div>

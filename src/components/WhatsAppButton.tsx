@@ -77,13 +77,26 @@ export default function WhatsAppButton() {
 
             <button
               onClick={() => {
-                handleOpenChat(language === 'en' ? 'Can we receive technical API documentation for Property Finder Qatar sync?' : 'هل يمكننا الحصول على وثائق واجهة البرمجة (API) للربط مع بروبرتي فايندر قطر؟');
+                handleOpenChat(language === 'en' ? 'Hi, I want to estimate how many old leads we can revive using Ansury Systems\' Database Reactivation.' : 'مرحباً، أود تقدير عدد العملاء القدامى الذين يمكننا تنشيطهم مجدداً باستخدام حملات أنسوري.');
                 setIsOpen(false);
               }}
               className="w-full text-left bg-[#1A2333] hover:bg-[#20293D] border border-[#2A3650]/40 rounded-lg p-2.5 text-[11px] text-[#D1D5DB] hover:text-white transition-all duration-200 flex items-center justify-between group"
             >
               <span className="truncate pr-2 text-left">
-                {language === 'en' ? 'Request Property Finder API details' : 'طلب تفاصيل ربط بروبرتي فايندر'}
+                {language === 'en' ? 'Estimate Database Reactivation ROI' : 'حساب جدوى تنشيط العملاء القدامى'}
+              </span>
+              <Sparkles className="w-3 h-3 text-[#25D366] shrink-0" />
+            </button>
+
+            <button
+              onClick={() => {
+                handleOpenChat(language === 'en' ? 'Marhaban, I would like to schedule a complimentary 30-minute automation audit for our property agency.' : 'مرحباً، أود جدولة جلسة تدقيق مجانية مدتها ٣٠ دقيقة لأتمتة عمليات وكالتنا العقارية.');
+                setIsOpen(false);
+              }}
+              className="w-full text-left bg-[#1A2333] hover:bg-[#20293D] border border-[#2A3650]/40 rounded-lg p-2.5 text-[11px] text-[#D1D5DB] hover:text-white transition-all duration-200 flex items-center justify-between group"
+            >
+              <span className="truncate pr-2 text-left">
+                {language === 'en' ? 'Book Free 30-Min Systems Audit' : 'حجز جلسة تدقيق تشغيلي مجانية'}
               </span>
               <Sparkles className="w-3 h-3 text-[#25D366] shrink-0" />
             </button>
